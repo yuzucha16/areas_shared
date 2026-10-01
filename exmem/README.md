@@ -1,23 +1,26 @@
 ---
 type: index
-title: AI開発ワークフロー
+title: exmem
 status: active
 tags:
-  - workflow
   - knowledge-management
+  - workflow
   - tool/obsidian
 aliases:
-  - exmem
-  - ai_workflow_notes
+  - external memory
+  - 外部メモリ
 created: 2026-09-26
 updated: 2026-10-01
 ---
 
-# AI開発ワークフロー
+# exmem
+
+exmem は external memory（外部メモリ）の略。AIと人間が共有するナレッジ置き場。
 
 ## 目的
 
-モバイルで行ったAIとの壁打ちを、PCのZed上でClaude / Codex / Copilotなど複数のAIエージェントに引き継ぎ、実装・検証までつなげる。
+AIとの壁打ちや作業から得た知識をここに蓄え、モバイル / PC、ChatGPT / Claude / Codex / Copilot と環境が変わっても、同じ知識を引き継いで使えるようにする。
+AIサービスの会話履歴やメモリに知識を閉じ込めず、Markdownの外部メモリとして持つ。
 
 基本方針は、**会話ログを溜めずに、知識として育てる**こと。
 会話の根拠（なぜそう決めたか）とハマりどころは、知識ファイルの中に残す。
@@ -29,7 +32,7 @@ updated: 2026-10-01
 ## ディレクトリ構造
 
 場所は `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）。`areas_shared` リポジトリでGit管理している。
-旧名は `ai_workflow_notes`。AIエージェントはこのディレクトリを作業ディレクトリとして起動する。
+AIエージェントはこのディレクトリを作業ディレクトリとして起動する。
 
 ```text
 exmem/
@@ -54,6 +57,7 @@ exmem/
         └── context.md
 ```
 
+exmem自体の設計（会話と知識の扱い、AIをまたぐ原則など）は `knowledge/ai-development-workflow.md` にある。
 Zed ACPは独立したプロジェクトではなく、AI開発ワークフローを構成する要素の一つとして `knowledge/zed-acp.md` で扱う。
 
 ## AI横断性

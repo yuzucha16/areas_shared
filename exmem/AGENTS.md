@@ -1,11 +1,10 @@
 # AGENTS.md
 
-このディレクトリは、AIとの壁打ちから得た知識を、AI・端末をまたいで引き継ぐためのナレッジベース。
+このディレクトリは exmem（external memory、外部メモリ）。AIと人間が共有するナレッジ置き場で、AIとの壁打ちや作業から得た知識を、AI・端末をまたいで引き継ぐ。
 Claude / Codex / Copilot など、どのエージェントも同じルールで読み書きする。
 人間はObsidianで閲覧・編集する。
 
 - 場所: `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）
-- 旧名は `ai_workflow_notes`。会話や過去の記録に `ai_workflow_notes` とあれば、このディレクトリを指す。
 - `areas_shared` は Gitリポジトリ `C:\vault\repos\github.com\yuzucha16\areas_shared` へのジャンクション。変更は `git diff` で確認できる。
 - エージェントはこのディレクトリを作業ディレクトリとして起動する。2026-10-01 まで使っていた `C:\Users\ck\vault\notes` は削除済み。
 

@@ -24,7 +24,7 @@ updated: 2026-10-01
   - 2026-10-01: このナレッジベース整備の会話メモ → [[ai-development-workflow]]（Principles、D6〜D9、Gotchas）と [[obsidian-vault]]
   - 2026-10-01: Zedのdotfiles管理とClaudeチャット履歴のメモ → [[zed-dotfiles]] と [[claude-code-storage]]
 - 2026-10-01 に作業拠点を `C:\Users\ck\vault\notes` から `C:\vault\notes\areas_shared\exmem` へ移した。
-  - 旧名 `ai_workflow_notes` は、exmemの別名として扱う。
+  - ナレッジベースの名前を exmem（external memory、外部メモリ）とした。AIと人間が共有するナレッジ置き場というコンセプト。
   - `areas_shared` はGitリポジトリ（yuzucha16/areas_shared）で、ナレッジベースはGit管理になった（[[obsidian-vault]]）。
   - エージェントはexmemを作業ディレクトリとして起動する。exmemの `AGENTS.md` / `CLAUDE.md` がそのまま読まれる。
   - Claude Codeの履歴とメモリを `C--vault-notes-areas-shared-exmem` へコピーした（[[claude-code-storage]]）。
@@ -76,5 +76,4 @@ AIサービスのチャット履歴ではなく、Markdownで管理するプロ�
 ## Open Questions
 
 - GitとObsidian Syncをどう使い分けるか。exmemは `areas_shared` リポジトリでGit管理され、VaultではObsidian Syncも有効になっている。
-- Downloads（`C:\Users\ck\Downloads\ai-workflow-notes`）に残っている整理前のコピーを削除するか。
 - プロジェクトコンテキストをどこまで自動生成するか

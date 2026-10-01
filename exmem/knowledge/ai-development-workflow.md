@@ -15,7 +15,7 @@ created: 2026-09-26
 updated: 2026-10-01
 sources:
   - ChatGPT conversation "AI開発ワークフロー検討" (2026-09-26)
-  - Claude Code conversation "ai_workflow_notesの整理" (2026-09-26〜2026-10-01)
+  - Claude Code conversation "exmemの整理" (2026-09-26〜2026-10-01)
 ---
 
 # AI開発ワークフロー

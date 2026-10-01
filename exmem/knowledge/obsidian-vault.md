@@ -12,7 +12,7 @@ aliases:
 created: 2026-10-01
 updated: 2026-10-01
 sources:
-  - Claude Code conversation "ai_workflow_notesの整理" (2026-09-26〜2026-10-01)
+  - Claude Code conversation "exmemの整理" (2026-09-26〜2026-10-01)
   - "C:\\vault\\notes\\.obsidian の設定ファイル（2026-10-01 に確認）"
 ---
 
@@ -73,7 +73,7 @@ sources:
 
 ### Vaultを移したあと、古い場所を編集していた
 
-- 状況: 2026-10-01 にナレッジベースを `C:\Users\ck\vault\notes\ai_workflow_notes` から `C:\vault\notes\areas_shared\exmem` へ移したが、AIエージェントは古い場所を作業ディレクトリとして開いたまま編集を続けた。
+- 状況: 2026-10-01 にナレッジベースを `C:\Users\ck\vault\notes` 配下から `C:\vault\notes\areas_shared\exmem` へ移したが、AIエージェントは古い場所を作業ディレクトリとして開いたまま編集を続けた。
 - 解決: 変更を exmem へ移し、古い場所は削除した。エージェントは `C:\vault\notes\areas_shared\exmem` を作業ディレクトリとして起動する。
 
 ## Proposals
