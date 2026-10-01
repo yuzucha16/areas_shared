@@ -23,16 +23,17 @@ updated: 2026-10-01
   - 2026-09-26: ZedへのVim環境移行のメモ → [[zed-vim]]
   - 2026-10-01: このナレッジベース整備の会話メモ → [[ai-development-workflow]]（Principles、D6〜D9、Gotchas）と [[obsidian-vault]]
   - 2026-10-01: Zedのdotfiles管理とClaudeチャット履歴のメモ → [[zed-dotfiles]] と [[claude-code-storage]]
-- 2026-10-01 に作業拠点を `C:\Users\ck\vault\notes` から `C:\vault\notes` へ移した。
-  - ナレッジベースは `areas_shared/exmem`。`areas_shared` はGitリポジトリ（yuzucha16/areas_shared）で、Git管理になった（[[obsidian-vault]]）。
-  - Vaultのルートに、エージェント向けの入口 `AGENTS.md` / `CLAUDE.md` を置いた。どこから起動してもexmemの場所がわかる。
-  - Claude Codeの履歴とメモリを `C--vault-notes` へコピーした（[[claude-code-storage]]）。
+- 2026-10-01 に作業拠点を `C:\Users\ck\vault\notes` から `C:\vault\notes\areas_shared\exmem` へ移した。
+  - 旧名 `ai_workflow_notes` は、exmemの別名として扱う。
+  - `areas_shared` はGitリポジトリ（yuzucha16/areas_shared）で、ナレッジベースはGit管理になった（[[obsidian-vault]]）。
+  - エージェントはexmemを作業ディレクトリとして起動する。exmemの `AGENTS.md` / `CLAUDE.md` がそのまま読まれる。
+  - Claude Codeの履歴とメモリを `C--vault-notes-areas-shared-exmem` へコピーした（[[claude-code-storage]]）。
   - 古い場所（`C:\Users\ck\vault`）と、Downloadsにあった整理前のコピーは削除した。
 - inbox は空。
 
 ## Next Actions
 
-- Claude Codeを `C:\vault\notes` で起動し、コピーした履歴とメモリが引き継がれているか確認する。
+- Claude Codeを `C:\vault\notes\areas_shared\exmem` で起動し、コピーした履歴とメモリが引き継がれているか確認する。
 - `knowledge.base` をObsidianで開き、一覧が表示されるか確認する。
 - モバイルで壁打ちし、Obsidianモバイルアプリで inbox に保存して、Sync経由でPCに届くか試す（D4の検証）。
 - Obsidianの設定変更（新規ノートの保存先・日付型・テンプレート）を判断する（[[obsidian-vault]] Proposals）。

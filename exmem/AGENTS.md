@@ -4,9 +4,10 @@
 Claude / Codex / Copilot など、どのエージェントも同じルールで読み書きする。
 人間はObsidianで閲覧・編集する。
 
-- 場所: Obsidian Vault `C:\vault\notes` の `areas_shared/exmem`
+- 場所: `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）
+- 旧名は `ai_workflow_notes`。会話や過去の記録に `ai_workflow_notes` とあれば、このディレクトリを指す。
 - `areas_shared` は Gitリポジトリ `C:\vault\repos\github.com\yuzucha16\areas_shared` へのジャンクション。変更は `git diff` で確認できる。
-- 作業ディレクトリが `C:\vault\notes` 配下になっているか、最初に確認する。2026-10-01 まで使っていた `C:\Users\ck\vault\notes` は削除済み。
+- エージェントはこのディレクトリを作業ディレクトリとして起動する。2026-10-01 まで使っていた `C:\Users\ck\vault\notes` は削除済み。
 
 ## 読む順番
 

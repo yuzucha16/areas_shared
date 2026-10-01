@@ -6,8 +6,11 @@ tags:
   - workflow
   - knowledge-management
   - tool/obsidian
+aliases:
+  - exmem
+  - ai_workflow_notes
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-01
 ---
 
 # AI開発ワークフロー
@@ -25,7 +28,8 @@ updated: 2026-09-26
 
 ## ディレクトリ構造
 
-場所は Obsidian Vault `C:\vault\notes` の `areas_shared/exmem`。`areas_shared` リポジトリでGit管理している。
+場所は `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）。`areas_shared` リポジトリでGit管理している。
+旧名は `ai_workflow_notes`。AIエージェントはこのディレクトリを作業ディレクトリとして起動する。
 
 ```text
 exmem/

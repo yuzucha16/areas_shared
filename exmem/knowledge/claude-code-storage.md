@@ -33,9 +33,9 @@ Claude Code（ZedのACP経由を含む）のチャット履歴とメモリがど
 | メモリ | `%USERPROFILE%\.claude\projects\<プロジェクト名>\memory\` |
 | プロジェクトごとの許可設定 | `<プロジェクト>\.claude\settings.local.json` |
 
-- `<プロジェクト名>` は、プロジェクトの絶対パスの `:` `\` `.` を `-` に置き換えたもの。
-  - `C:\vault\notes` → `C--vault-notes`
-  - `C:\Users\ck\vault\github.com\yuzucha16\notes` → `C--Users-ck-vault-github-com-yuzucha16-notes`
+- `<プロジェクト名>` は、プロジェクトの絶対パスの英数字以外（`:` `\` `.` など）を `-` に置き換えたもの。
+  - `C:\Users\ck\vault\github.com\yuzucha16\notes` → `C--Users-ck-vault-github-com-yuzucha16-notes`（確認済み）
+  - `C:\vault\notes\areas_shared\exmem` → `C--vault-notes-areas-shared-exmem`（`_` も `-` になるという仮説。未確認）
 - 1チャット = 1ファイル。隠しファイルではない。
 - プロジェクト直下の `.claude\` にあるのは `settings.local.json` だけで、履歴は入っていない。
 - ZedのACP経由のチャットも、Zedの `threads.db` ではなくここに保存される（[[zed-dotfiles]]）。
@@ -47,7 +47,9 @@ Claude Code（ZedのACP経由を含む）のチャット履歴とメモリがど
 
 引き継ぐには、`projects\<旧プロジェクト名>\` の `.jsonl` と `memory\` を `projects\<新プロジェクト名>\` にコピーする。
 
-2026-10-01 に、`C:\Users\ck\vault\notes` から `C:\vault\notes` への移動でこの方法を使った（`C--Users-ck-vault-notes` → `C--vault-notes`）。コピーした履歴が新しい場所で表示されるかは未確認（仮説）。
+2026-10-01 に、作業拠点を `C:\Users\ck\vault\notes` から `C:\vault\notes\areas_shared\exmem` へ移すときにこの方法を使った（`C--Users-ck-vault-notes` → `C--vault-notes-areas-shared-exmem`）。コピーした履歴が新しい場所で表示されるかは未確認（仮説）。
+
+Claude Codeを起動して `projects\` に別の名前のフォルダができた場合は、プロジェクト名の仮説が外れている。そのフォルダへ `.jsonl` と `memory\` をコピーし直す。
 
 ## Decisions
 
@@ -79,7 +81,7 @@ Claude Code（ZedのACP経由を含む）のチャット履歴とメモリがど
 
 ## Next Actions
 
-- Claude Codeを `C:\vault\notes` で起動し、コピーした履歴が表示されるか確認する。
+- Claude Codeを `C:\vault\notes\areas_shared\exmem` で起動し、コピーした履歴が表示されるか、`projects\` にできるフォルダ名が `C--vault-notes-areas-shared-exmem` か確認する。
 
 ## Related
 
