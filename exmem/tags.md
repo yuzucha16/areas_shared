@@ -7,7 +7,7 @@ tags:
 aliases:
   - Tags
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-01
 ---
 
 # タグ一覧
@@ -52,4 +52,5 @@ updated: 2026-09-26
 | `acp` | Agent Client Protocol |
 | `keymap` | キーバインド |
 | `setup` | インストール・初期設定の手順 |
+| `dotfiles` | 設定ファイルのGit管理・別PCでの再現 |
 | `mobile` | モバイル端末での利用 |

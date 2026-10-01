@@ -25,8 +25,10 @@ updated: 2026-09-26
 
 ## ディレクトリ構造
 
+場所は Obsidian Vault `C:\vault\notes` の `areas_shared/exmem`。`areas_shared` リポジトリでGit管理している。
+
 ```text
-ai_workflow_notes/
+exmem/
 ├── README.md
 ├── AGENTS.md          # 全エージェント共通の入口・書き方ルール
 ├── CLAUDE.md          # @AGENTS.md を読み込むだけ
@@ -36,7 +38,10 @@ ai_workflow_notes/
 │   └── README.md      # モバイル用の引き継ぎプロンプト
 ├── knowledge/
 │   ├── ai-development-workflow.md
+│   ├── claude-code-storage.md
+│   ├── obsidian-vault.md
 │   ├── zed-acp.md
+│   ├── zed-dotfiles.md
 │   └── zed-vim.md
 └── projects/
     ├── ai-development-workflow/

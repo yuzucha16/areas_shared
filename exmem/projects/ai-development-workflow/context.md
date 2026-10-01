@@ -8,7 +8,7 @@ tags:
 aliases:
   - AI開発ワークフロー Project Context
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-01
 ---
 
 # AI開発ワークフロー Project Context
@@ -17,17 +17,25 @@ updated: 2026-09-26
 
 - ZedにCodexとClaude AgentをACPで接続済み（[[zed-acp]]）。
 - ナレッジ構成を `inbox/` → `knowledge/` → `projects/` の形に整理した。会話ログは常設しない（[[ai-development-workflow]] D2）。
-- 各エージェントの入口として `AGENTS.md` を置いた。
-- inbox → knowledge の流れを1回通した（2026-09-26、ZedへのVim環境移行のメモ → [[zed-vim]]）。統合時に実際の設定ファイルと照合し、メモと食い違う点が見つかった。
-
-- Obsidian向けの作法を追加した。タグは `tags.md` の統制語彙による階層タグ、`aliases` で日本語名を付ける、知識一覧は `knowledge.base` で見る（[[ai-development-workflow]] D5）。
-- `AGENTS.md` に、統合時に実物と照合する手順と、`Principles` / `Gotchas` の使い分けを追加した。
+- 各エージェントの入口として `AGENTS.md` を置いた（D6）。
+- Obsidian向けの作法を追加した。タグは `tags.md` の統制語彙による階層タグ、`aliases` で日本語名を付ける、知識一覧は `knowledge.base` で見る（D5、D9）。
+- inbox → knowledge の流れを3回通した。毎回、実物との照合でメモとの食い違いが見つかった。
+  - 2026-09-26: ZedへのVim環境移行のメモ → [[zed-vim]]
+  - 2026-10-01: このナレッジベース整備の会話メモ → [[ai-development-workflow]]（Principles、D6〜D9、Gotchas）と [[obsidian-vault]]
+  - 2026-10-01: Zedのdotfiles管理とClaudeチャット履歴のメモ → [[zed-dotfiles]] と [[claude-code-storage]]
+- 2026-10-01 に作業拠点を `C:\Users\ck\vault\notes` から `C:\vault\notes` へ移した。
+  - ナレッジベースは `areas_shared/exmem`。`areas_shared` はGitリポジトリ（yuzucha16/areas_shared）で、Git管理になった（[[obsidian-vault]]）。
+  - Vaultのルートに、エージェント向けの入口 `AGENTS.md` / `CLAUDE.md` を置いた。どこから起動してもexmemの場所がわかる。
+  - Claude Codeの履歴とメモリを `C--vault-notes` へコピーした（[[claude-code-storage]]）。
+  - 古い場所（`C:\Users\ck\vault`）と、Downloadsにあった整理前のコピーは削除した。
+- inbox は空。
 
 ## Next Actions
 
-- モバイルで壁打ちし、Obsidianモバイルアプリで inbox に保存して、Sync経由でPCに届くか試す（D4の検証）。
+- Claude Codeを `C:\vault\notes` で起動し、コピーした履歴とメモリが引き継がれているか確認する。
 - `knowledge.base` をObsidianで開き、一覧が表示されるか確認する。
-- Obsidian VaultをGit管理するか決める。
+- モバイルで壁打ちし、Obsidianモバイルアプリで inbox に保存して、Sync経由でPCに届くか試す（D4の検証）。
+- Obsidianの設定変更（新規ノートの保存先・日付型・テンプレート）を判断する（[[obsidian-vault]] Proposals）。
 - Copilotを接続する。
 
 ## Goal
@@ -66,5 +74,6 @@ AIサービスのチャット履歴ではなく、Markdownで管理するプロ�
 
 ## Open Questions
 
-- Obsidian VaultをGit管理するか（Obsidian Syncとの併用要否）
+- GitとObsidian Syncをどう使い分けるか。exmemは `areas_shared` リポジトリでGit管理され、VaultではObsidian Syncも有効になっている。
+- Downloads（`C:\Users\ck\Downloads\ai-workflow-notes`）に残っている整理前のコピーを削除するか。
 - プロジェクトコンテキストをどこまで自動生成するか

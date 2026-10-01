@@ -1,6 +1,6 @@
 filters:
   and:
-    - file.inFolder("ai_workflow_notes")
+    - file.inFolder("areas_shared/exmem")
     - file.ext == "md"
 views:
   - type: table

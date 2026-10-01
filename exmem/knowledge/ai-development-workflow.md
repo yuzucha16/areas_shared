@@ -12,9 +12,10 @@ tags:
 aliases:
   - AI開発ワークフロー
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-01
 sources:
   - ChatGPT conversation "AI開発ワークフロー検討" (2026-09-26)
+  - Claude Code conversation "ai_workflow_notesの整理" (2026-09-26〜2026-10-01)
 ---
 
 # AI開発ワークフロー
@@ -59,8 +60,9 @@ sources:
 
 | 会話にあった情報 | 知識ファイルでの置き場 |
 |---|---|
+| 判断の拠り所になる方針 | `## Principles` |
 | なぜそう決めたか・捨てた案 | `## Decisions` |
-| エラーと解決方法 | `## Gotchas` |
+| 実際に遭遇したエラーと解決方法 | `## Gotchas` |
 
 知識は「現在、何を前提としているか」の記録。
 
@@ -161,6 +163,13 @@ AIのコンテキスト
 - 会話ログは常設せず、根拠とハマりどころを知識へ統合する
 - プロジェクトごとの現在状態を `context.md` にまとめる
 
+## Principles
+
+- オリジナルの仕組みを作るより、既存のお作法（`AGENTS.md`、YAML frontmatter、統制語彙のタグなど）を優先する。
+- 会話ログを溜めずに、知識として育てる。会話の価値は「なぜそう決めたか」と「ハマりどころ」に集約される。
+- 会話から作ったメモは実物と食い違うことがある。統合時は設定ファイルやコードと照合し、実物を正とする。
+- タグは横断的な分類、特定ノートとの関係は `[[リンク]]` で表す。
+
 ## Decisions
 
 ### D1: AIサービス間の会話履歴同期は目指さない（2026-09-26）
@@ -192,14 +201,54 @@ AIのコンテキスト
 - 根拠: 複数のAIが自由にタグを付けると表記揺れ（`zed` / `Zed` / `zed-editor`）が起き、Obsidianでの絞り込みが効かなくなる。階層タグはObsidianで親タグ検索ができ、`colored-tags` で色分けもされる。
 - 却下案: 自由タグ。`type` の値をタグにも入れる（プロパティと重複する）。
 
+### D6: エージェントの入口を `AGENTS.md` に一本化する（2026-09-26）
+
+- 決定: 読む順番・書き方・inbox整理の手順を `AGENTS.md` にまとめる。Claude Code向けの `CLAUDE.md` は `@AGENTS.md` の1行だけにする。
+- 根拠: Codex・Copilot・Zedが `AGENTS.md` を読む。指示を1か所にして重複と食い違いを避ける。
+- 却下案: AIごとに個別の指示ファイルを書く。
+
+### D7: `context.md` を引き継ぎメモとして使う（2026-09-26）
+
+- 決定: `context.md` の先頭に `Current State` / `Next Actions` を置き、作業の終わりに更新する。
+- 根拠: 次に作業するAI・端末が、そこから再開できる。
+
+### D8: 知識ファイルの見出しを `Principles` / `Decisions` / `Gotchas` で使い分ける（2026-09-26）
+
+- 決定: `Gotchas` は実際に遭遇したエラーに限定し、方針や一般的な注意点は `Principles` に書く。
+- 根拠: Vim移行のinboxメモで、方針的な注意点が `Gotchas` に書かれ、`Decisions` と重複した（[[zed-vim]]）。
+
+### D9: `aliases` に日本語名を入れる（2026-09-26）
+
+- 決定: ファイル名は英語の kebab-case、`aliases` に日本語名・別名を入れる。
+- 根拠: Obsidianのリンク補完・検索を日本語で行える。
+
+## Gotchas
+
+### 会話から知識への抽出で情報が抜け落ちた
+
+- 状況: Zed ACPハンズオンの会話にあった、Codexの `Missing optional dependency` エラーの対処と、`/login` が入力候補に出ない件が、知識ファイルに入っていなかった。
+- 解決: 知識ファイルに `Gotchas` 欄を設けて移した（[[zed-acp]]）。D2の根拠にもなった。
+
+### inboxメモの内容が実際の設定と食い違った
+
+- 状況: Vim移行のメモでは「`keymap.json` は空」だったが、実際にはターミナル用の設定があった。
+- 解決: 実物を正として記録し、食い違いを `Open Questions` に残した（[[zed-vim]]）。統合時に実物と照合する手順を `AGENTS.md` に追加した。
+
+### READMEの構成図が実態とずれていた
+
+- 状況: 存在しない `projects/zed-acp/context.md` が載り、ルートのフォルダ名も実際と違っていた。
+- 解決: 構成図を直し、新しいファイルを作ったら README を更新する手順を `AGENTS.md` に入れた。
+
 ## 8. 未決事項
 
 - Obsidian Vaultと開発リポジトリの境界
 - AIにどこまで自動整理させるか
-- Git同期方法（Obsidian Syncとの併用要否を含む）
+- GitとObsidian Syncの使い分け。2026-10-01 からexmemは `areas_shared` リポジトリでGit管理されている（[[obsidian-vault]]）。
+- 知識ファイルの `sources` に元の会話のURLを残すか。現状はタイトルと日付のみ。
 
 ## Related
 
+- [[obsidian-vault]]
 - [[zed-acp]]
 - [[ai-development-workflow/context]]
 - [[tags]]

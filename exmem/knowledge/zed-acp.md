@@ -150,6 +150,8 @@ ACPの通信ログはZed Command Paletteの `dev: open acp logs` で確認でき
 
 - [[ai-development-workflow]]
 - [[zed-vim]]
+- [[zed-dotfiles]]
+- [[claude-code-storage]]
 
 ## Reference
 

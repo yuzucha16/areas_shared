@@ -2,7 +2,11 @@
 
 このディレクトリは、AIとの壁打ちから得た知識を、AI・端末をまたいで引き継ぐためのナレッジベース。
 Claude / Codex / Copilot など、どのエージェントも同じルールで読み書きする。
-人間はObsidian（Vaultのルートは1つ上の `notes/`）で閲覧・編集する。
+人間はObsidianで閲覧・編集する。
+
+- 場所: Obsidian Vault `C:\vault\notes` の `areas_shared/exmem`
+- `areas_shared` は Gitリポジトリ `C:\vault\repos\github.com\yuzucha16\areas_shared` へのジャンクション。変更は `git diff` で確認できる。
+- 作業ディレクトリが `C:\vault\notes` 配下になっているか、最初に確認する。2026-10-01 まで使っていた `C:\Users\ck\vault\notes` は削除済み。
 
 ## 読む順番
 
