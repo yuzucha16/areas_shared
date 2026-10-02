@@ -10,7 +10,7 @@ aliases:
   - external memory
   - 外部メモリ
 created: 2026-09-26
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 
 # exmem
@@ -44,14 +44,32 @@ exmem/
 ├── inbox/
 │   └── README.md      # モバイル用の引き継ぎプロンプト
 ├── knowledge/
-│   ├── ai-development-workflow.md
+│   ├── ai-business-adoption.md          # AI活用の業務適用（ROI・習得工程）
+│   ├── ai-development-workflow.md       # exmem自体の設計
+│   ├── ai-handson-framework.md          # ハンズオン設計・情報ダイジェスト
+│   ├── ai-harness-concepts.md           # モデルとハーネス
+│   ├── claude-code-project-settings.md  # .claude/ の管理方針
 │   ├── claude-code-storage.md
+│   ├── claude-code-vs-cowork.md
+│   ├── human-ai-decision-loop.md
+│   ├── keyboard-switches.md
+│   ├── linux-distro-selection.md
+│   ├── linux-multiboot-setup.md
+│   ├── modern-cli-tools.md
 │   ├── obsidian-vault.md
+│   ├── office-ai-workspace.md
+│   ├── power-automate-office-automation.md
+│   ├── vscode-workspace.md
+│   ├── wsl-file-placement.md
 │   ├── zed-acp.md
 │   ├── zed-dotfiles.md
 │   └── zed-vim.md
 └── projects/
+    ├── ai-business-adoption/
+    │   └── context.md
     ├── ai-development-workflow/
+    │   └── context.md
+    ├── linux-home-pc/
     │   └── context.md
     └── zed-vim-migration/
         └── context.md

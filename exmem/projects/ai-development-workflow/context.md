@@ -8,7 +8,7 @@ tags:
 aliases:
   - AI開発ワークフロー Project Context
 created: 2026-09-26
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 
 # AI開発ワークフロー Project Context
@@ -29,15 +29,28 @@ updated: 2026-10-01
   - エージェントはexmemを作業ディレクトリとして起動する。exmemの `AGENTS.md` / `CLAUDE.md` がそのまま読まれる。
   - Claude Codeの履歴とメモリを `C--vault-notes-areas-shared-exmem` へコピーした（[[claude-code-storage]]）。
   - 古い場所（`C:\Users\ck\vault`）と、Downloadsにあった整理前のコピーは削除した。
-- inbox は空。
+- 2026-10-02 に、inbox のメモ21件（2026-09-26〜10-02）を統合した（4回目）。実物との照合で次の食い違いが見つかった。
+  - Zedのターミナルは `pwsh.exe` で、メモ（2026-09-26）の `wsl.exe` と違う。`claude-acp` に既定モデル `sonnet` も入っていた（[[zed-vim]]、[[zed-dotfiles]]）。
+  - ZedのClaude Agentが起動しない問題は、PowerShellプロファイルの非対話ガードで解消済み。ガードは `profile.ps1`（dotfilesへのシンボリックリンク）の2行目にある（[[zed-acp]]）。
+  - メモの `ai-handson/` と `excel-aggregation` スキルは、実際にはまだ配置されていない（[[ai-handson-framework]]、[[claude-code-vs-cowork]]）。
+  - vaultのバックアップ用タスクは見当たらない。「vaultの `.git` は1つ」という記述は実物と違う（[[obsidian-vault]]）。
+  - WSLには `fd` / `eza` / `broot` / `ghq` / `nvim` が入っていない（[[modern-cli-tools]]）。
+- 新しい知識ファイルは、AIの設計（[[ai-harness-concepts]]、[[ai-handson-framework]]、[[ai-business-adoption]]、[[human-ai-decision-loop]]）、Office / 自動化（[[office-ai-workspace]]、[[claude-code-vs-cowork]]、[[power-automate-office-automation]]）、環境（[[wsl-file-placement]]、[[vscode-workspace]]、[[modern-cli-tools]]）、Linux（[[linux-distro-selection]]、[[linux-multiboot-setup]]）、その他（[[keyboard-switches]]）。業務適用とLinux移行は別のプロジェクトにした（[[ai-business-adoption/context]]、[[linux-home-pc/context]]）。
+- 個人的な内容の3件（転職・EQ・入社計画）は、ユーザーがexmem外のローカルへ移した。inbox は空。
+- プロジェクトの `.claude/` は、`settings.local.json` だけをignoreし、`settings.json` / `skills/` は育ったら管理下に置く方針にした（[[claude-code-project-settings]]）。リポジトリのルートに `.gitignore` を追加した。
 
 ## Next Actions
 
-- Claude Codeを `C:\vault\notes\areas_shared\exmem` で起動し、コピーした履歴とメモリが引き継がれているか確認する。
+- Zedで exmem をプロジェクトとして開き、Claude Agentが exmem の `AGENTS.md` を読んでいるか確認する（「exmemって何？」と聞く）。
+- ターミナルで exmem に移動して `claude --resume` を実行し、コピーした履歴とメモリが引き継がれているか確認する（[[claude-code-storage]]）。
 - `knowledge.base` をObsidianで開き、一覧が表示されるか確認する。
 - モバイルで壁打ちし、Obsidianモバイルアプリで inbox に保存して、Sync経由でPCに届くか試す（D4の検証）。
 - Obsidianの設定変更（新規ノートの保存先・日付型・テンプレート）を判断する（[[obsidian-vault]] Proposals）。
 - Copilotを接続する。
+- ZedのWSL連携方式と、開発リポジトリをWindows側（`C:\vault\repos`）に置くかWSL側に置くかを決める（[[wsl-file-placement]]）。
+- vaultのバックアップ（robocopy + タスクスケジューラ）を設定する（[[obsidian-vault]]）。
+- Zedで `claude-acp` が起動しない問題が再発したら、まずシェルのプロファイル出力を疑う（[[zed-acp]]）。
+- AI活用の業務適用の次の作業は [[ai-business-adoption/context]] を見る。
 
 ## Goal
 

@@ -35,7 +35,8 @@ Claude Code（ZedのACP経由を含む）のチャット履歴とメモリがど
 
 - `<プロジェクト名>` は、プロジェクトの絶対パスの英数字以外（`:` `\` `.` など）を `-` に置き換えたもの。
   - `C:\Users\ck\vault\github.com\yuzucha16\notes` → `C--Users-ck-vault-github-com-yuzucha16-notes`（確認済み）
-  - `C:\vault\notes\areas_shared\exmem` → `C--vault-notes-areas-shared-exmem`（`_` も `-` になるという仮説。未確認）
+  - `C:\vault\repos\github.com\yuzucha16\areas_shared` → `C--vault-repos-github-com-yuzucha16-areas-shared`（`_` も `-` になる。確認済み）
+- ジャンクション経由のパスは、実体のパスに解決されてから名前になる可能性がある（仮説）。exmemの場合、`C--vault-notes-areas-shared-exmem` と `C--vault-repos-github-com-yuzucha16-areas-shared-exmem` のどちらになるかは未確認のため、2026-10-01 に両方へ履歴とメモリをコピーした。
 - 1チャット = 1ファイル。隠しファイルではない。
 - プロジェクト直下の `.claude\` にあるのは `settings.local.json` だけで、履歴は入っていない。
 - ZedのACP経由のチャットも、Zedの `threads.db` ではなくここに保存される（[[zed-dotfiles]]）。
@@ -70,6 +71,17 @@ Claude Codeを起動して `projects\` に別の名前のフォルダができ�
 - 原因: プロジェクト内の `.claude` を見ていた。隠し属性ではない。
 - 解決: エクスプローラーのアドレスバーに `%USERPROFILE%\.claude\projects` を入力して開く。
 
+### Zedで exmem のセッションを立てても、exmem として動かない
+
+- 状況: Zedのワークスペースが `C:\vault` のまま、Claude Agentのチャットに exmem のパスや `cd notes/areas_shared/exmem` と書いた。セッションは `C:\vault` を作業フォルダとして動き、履歴は `C--vault` に保存された。exmemの `CLAUDE.md` も読まれなかった。
+- 原因: ZedのClaude Agentは、Zedで開いているプロジェクトのルートを作業フォルダにして起動する。チャットでの `cd` では変わらない。
+- 解決: exmemをZedのプロジェクトとして開き直す（`zed C:\vault\notes\areas_shared\exmem`、または File > Open で exmem フォルダを選ぶ）。その上で新しいThreadを作る。
+
+### Zedで `/resume` が使えない
+
+- 原因: `/resume` はターミナル版Claude Codeのコマンドで、ZedのACP経由では使えない。
+- 解決: 過去のチャットを再開するときは、ターミナルで作業フォルダに移動してから `claude --resume` を実行する。
+
 ### Claude Desktop の Projects に履歴が出ない
 
 - 原因: 不具合ではない。Desktop の Projects はクラウド、Claude Code の履歴はローカルで、保存先が別。
@@ -81,10 +93,11 @@ Claude Codeを起動して `projects\` に別の名前のフォルダができ�
 
 ## Next Actions
 
-- Claude Codeを `C:\vault\notes\areas_shared\exmem` で起動し、コピーした履歴が表示されるか、`projects\` にできるフォルダ名が `C--vault-notes-areas-shared-exmem` か確認する。
+- ターミナルで `C:\vault\notes\areas_shared\exmem` に移動して `claude --resume` を実行し、コピーした履歴が表示されるか確認する。あわせて、`projects\` のどちらのフォルダに書き込まれるかを確認し、使われなかった方を削除する。
 
 ## Related
 
 - [[zed-dotfiles]]
 - [[zed-acp]]
 - [[obsidian-vault]]
+- [[claude-code-project-settings]]

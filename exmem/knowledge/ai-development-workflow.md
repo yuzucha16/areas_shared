@@ -12,9 +12,10 @@ tags:
 aliases:
   - AI開発ワークフロー
 created: 2026-09-26
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - ChatGPT conversation "AI開発ワークフロー検討" (2026-09-26)
+  - ChatGPT conversation "Zed ACPとAI横断ナレッジワークフロー" (2026-10-02)
   - Claude Code conversation "exmemの整理" (2026-09-26〜2026-10-01)
 ---
 
@@ -239,6 +240,11 @@ AIのコンテキスト
 - 状況: 存在しない `projects/zed-acp/context.md` が載り、ルートのフォルダ名も実際と違っていた。
 - 解決: 構成図を直し、新しいファイルを作ったら README を更新する手順を `AGENTS.md` に入れた。
 
+### 初期案の `conversations/` は採用されなかった
+
+- 状況: 2026-10-02 にinboxへ届いたメモ「Zed ACPとAI横断ナレッジワークフロー」は、`inbox/`・`knowledge/`・`projects/<project>/context.md` に加えて `conversations/` を置く最小構造と、「会話ログと知識を分離する」考えを書いていた。これは2026-09-26 の初期案で、D2で廃止済み。
+- 解決: 実物（`inbox/` → `knowledge/` → `projects/`）を正とした。メモの Next Actions にあった `conversations/` の作成は行わない。
+
 ## 8. 未決事項
 
 - Obsidian Vaultと開発リポジトリの境界
@@ -250,5 +256,8 @@ AIのコンテキスト
 
 - [[obsidian-vault]]
 - [[zed-acp]]
+- [[ai-harness-concepts]]
+- [[ai-handson-framework]]
+- [[human-ai-decision-loop]]
 - [[ai-development-workflow/context]]
 - [[tags]]

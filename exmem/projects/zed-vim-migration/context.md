@@ -9,7 +9,7 @@ tags:
 aliases:
   - ZedへのVim環境移行 Project Context
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-02
 ---
 
 # ZedへのVim環境移行 Project Context
@@ -20,6 +20,7 @@ updated: 2026-09-26
 - Vim Pluginは破棄し、Zed標準機能へ置き換える方針が決まった。個々の操作の対応はまだ試していない。
 - `keymap.json` にはターミナル内で `Ctrl-P` / `Ctrl-N` / `Ctrl-Shift-M` をシェルへ送る設定だけがある。
 - Leaderは未変更。
+- 2026-10-02 の再確認で、Zedのターミナルのシェルは `wsl.exe` から `pwsh.exe` に変わっていた。上記の設定キーは同じ値で残っている（[[zed-vim]]、[[wsl-file-placement]]）。
 
 ## Next Actions
 

@@ -12,10 +12,10 @@ aliases:
   - Zed Vim環境
   - ZedへのVim環境移行
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-02
 sources:
   - ChatGPT conversation "ZedへのVim環境移行" (2026-09-26)
-  - "%APPDATA%\\Zed\\settings.json / keymap.json（2026-09-26 に内容を確認）"
+  - "%APPDATA%\\Zed\\settings.json / keymap.json（2026-09-26 に内容を確認、2026-10-02 に再確認）"
 ---
 
 # Zed Vim環境
@@ -62,16 +62,17 @@ Vim modeにはVimの基本操作に加えて、ZedのPane（`Ctrl-W h/j/k/l`）�
 
 ## Current Settings
 
-2026-09-26 時点。
+2026-10-02 に `settings.json` を再確認した。
 
 - `vim_mode: true`
 - テーマ: Gruvbox Dark（dark）/ One Light（light）
 - アイコンテーマ: Zed (Default)
 - フォントサイズ: UI 16 / buffer 15
-- ターミナルのシェル: `wsl.exe`
+- ターミナルのシェル: `pwsh.exe`（2026-09-26 時点では `wsl.exe`。変更されている）
 - Status Bar: active language / cursor position / line endings / encoding を表示
+- 上の対応表の設定キー（`gutter.line_numbers`、`auto_indent`、`hard_tabs`、`tab_size`、`use_smartcase_search`、`vim.use_system_clipboard`）は、2026-10-02 時点でも同じ値で残っている。
 
-`keymap.json` は、テンプレートのコメント以外に次の設定だけを持つ。
+`keymap.json` は、テンプレートのコメント（`j k` → `vim::NormalBefore` のコメントアウト行を含む）以外に次の設定だけを持つ（2026-10-02 時点も同じ）。
 
 ```json
 {
@@ -84,7 +85,7 @@ Vim modeにはVimの基本操作に加えて、ZedのPane（`Ctrl-W h/j/k/l`）�
 }
 ```
 
-ターミナル内では `Ctrl-P` / `Ctrl-N` をZedに取られず、シェル（WSL）へそのまま送る。エディタ上の `Ctrl-P` はGo to File、ターミナル内ではシェルの履歴操作、という使い分けになる。
+ターミナル内では `Ctrl-P` / `Ctrl-N` をZedに取られず、シェルへそのまま送る。エディタ上の `Ctrl-P` はGo to File、ターミナル内ではシェルの履歴操作、という使い分けになる。ターミナルのシェルは現在PowerShell（`pwsh.exe`）で、プロファイルにも `Ctrl+p` の履歴検索のキーバインドがある。シェルを `wsl.exe` から変えた経緯は未確認（[[wsl-file-placement]]）。
 
 ## Decisions
 
@@ -119,3 +120,5 @@ Vim modeにはVimの基本操作に加えて、ZedのPane（`Ctrl-W h/j/k/l`）�
 
 - [[zed-vim-migration/context]]
 - [[zed-acp]]
+- [[wsl-file-placement]]
+- [[vscode-workspace]]

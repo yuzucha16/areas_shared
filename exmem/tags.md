@@ -7,7 +7,7 @@ tags:
 aliases:
   - Tags
 created: 2026-09-26
-updated: 2026-10-01
+updated: 2026-10-02
 ---
 
 # タグ一覧
@@ -32,6 +32,11 @@ updated: 2026-10-01
 | `tool/vim` | Vim |
 | `tool/neovim` | Neovim |
 | `tool/obsidian` | Obsidian |
+| `tool/vscode` | Visual Studio Code |
+| `tool/wsl` | WSL（Windows Subsystem for Linux） |
+| `tool/powershell` | PowerShell（プロファイル含む） |
+| `tool/excel` | Excel（Office Scripts含む） |
+| `tool/power-automate` | Power Automate |
 
 ### `ai/` — AIサービス・エージェント
 
@@ -40,7 +45,7 @@ updated: 2026-10-01
 | `ai/chatgpt` | ChatGPT（モバイル・Webのチャット） |
 | `ai/codex` | Codex |
 | `ai/claude` | Claude / Claude Agent |
-| `ai/copilot` | GitHub Copilot |
+| `ai/copilot` | GitHub Copilot / Microsoft 365 Copilot |
 
 ### トピック
 
@@ -54,3 +59,12 @@ updated: 2026-10-01
 | `setup` | インストール・初期設定の手順 |
 | `dotfiles` | 設定ファイルのGit管理・別PCでの再現 |
 | `mobile` | モバイル端末での利用 |
+| `harness` | AIエージェントのハーネス（実行環境・権限・状態・検証） |
+| `agent-design` | AIエージェント・人間とAIの役割分担の設計 |
+| `automation` | 業務・定型作業の自動化 |
+| `office` | Office成果物（Excel / PowerPoint / Word）を扱う業務 |
+| `windows` | Windows環境固有の話題 |
+| `backup` | バックアップ・データの置き場所 |
+| `cli` | コマンドラインツール |
+| `linux` | Linuxディストリビューション・導入 |
+| `hardware` | 物理デバイス（キーボードなど） |

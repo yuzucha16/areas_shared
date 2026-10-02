@@ -11,10 +11,11 @@ aliases:
   - Zedのdotfiles管理
   - Zedの設定の再現
 created: 2026-10-01
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
   - Claude (Claude Code via Zed ACP) conversation "Zedのextension/ACPエージェントのdotfiles管理" (2026-10-01)
   - "%APPDATA%\\Zed / %LOCALAPPDATA%\\Zed / dotfilesリポジトリ（2026-10-01 に確認）"
+  - "%APPDATA%\\Zed\\settings.json、PowerShellプロファイル（2026-10-02 に再確認）"
 ---
 
 # Zedのdotfiles管理
@@ -46,13 +47,24 @@ Zedの設定・extension・ACPエージェントをdotfilesリポジトリで管
   "powershell": true
 },
 "agent_servers": {
-  "claude-acp": { "type": "registry" },
+  "claude-acp": {
+    "default_config_options": { "model": "sonnet" },
+    "type": "registry"
+  },
   "codex-acp": { "type": "registry" }
 }
 ```
 
 - `auto_install_extensions`: 起動時に不足しているextensionを自動インストールする。`powershell` を登録済み（コミット `0533feb`）。
-- `agent_servers`: ACPエージェントの設定。Registryからインストールした時点で自動的に記録される（[[zed-acp]]）。
+- `agent_servers`: ACPエージェントの設定。Registryからインストールした時点で自動的に記録される（[[zed-acp]]）。2026-10-02 の確認で、`claude-acp` に `default_config_options.model: "sonnet"`（既定モデル）が加わっていた。
+
+PowerShellのプロファイルも同じ方式で管理されている（2026-10-02 に確認）。
+
+| ファイル | リンク先 |
+|---|---|
+| `%USERPROFILE%\Documents\PowerShell\profile.ps1` | `dotfiles\profile.ps1`（シンボリックリンク） |
+
+プロファイルの先頭には、非対話起動なら抜けるガードがあり、ZedのClaude Agent起動に必要（[[zed-acp]]）。dotfilesのGit追跡ファイルの一覧には `Microsoft.PowerShell_profile.ps1` があるが、リンク先の `profile.ps1` が追跡されているかは今回確認していない。
 
 ## Windowsでの配置
 
@@ -102,3 +114,4 @@ Zedの設定・extension・ACPエージェントをdotfilesリポジトリで管
 - [[zed-acp]]
 - [[zed-vim]]
 - [[claude-code-storage]]
+- [[vscode-workspace]]
