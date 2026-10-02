@@ -6,6 +6,10 @@
 !/.obsidian/
 !/resources/
 
+# どの階層の _local/ もローカル専用（中身は無視。.gitkeep だけ追跡して、clone でディレクトリを復元する）
+**/_local/*
+!**/_local/.gitkeep
+
 # Obsidian の端末ごとの状態
 /.obsidian/workspace.json
 /.obsidian/workspace-mobile.json
