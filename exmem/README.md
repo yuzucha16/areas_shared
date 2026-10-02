@@ -48,6 +48,7 @@ exmem/
 │   ├── ai-development-workflow.md       # exmem自体の設計
 │   ├── ai-handson-framework.md          # ハンズオン設計・情報ダイジェスト
 │   ├── ai-harness-concepts.md           # モデルとハーネス
+│   ├── claude-code-permissions.md       # 権限制御と共通土台（自走期間）
 │   ├── claude-code-project-settings.md  # .claude/ の管理方針
 │   ├── claude-code-storage.md
 │   ├── claude-code-vs-cowork.md

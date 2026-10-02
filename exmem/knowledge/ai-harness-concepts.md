@@ -32,7 +32,7 @@ Claude（claude.ai / Claude Code）、GPT（ChatGPT / Codex）、Microsoft 365 C
 - 確実に守らせたいことは権限・フックで強制し、方針と文脈は指示ファイルに書く。指示ファイルに「するな」と書いても守られるとは限らない。
 - 自走が長くなるほど人が確認できなくなるため、**検証 → 状態の外部化 → 権限**の順で足す。1周で足す要素は1〜2個にして、効果を切り分ける。
 - 一発完成を目指さない。失敗した箇所に対応する要素から足す。
-- 権限を緩めるときは、失敗時の回収手段（チェックポイント、git）を対で置く。
+- 権限を緩めるときは、失敗時の回収手段（チェックポイント、git）を対で置く。実装の例は [[claude-code-permissions]]（読み取りと取返し可の書き込みはallow、取返し不可は確認、壊してよい環境だけ緩める）。
 - AI界隈の新しい用語は、既存の工学・管理技法との対応を探して理解する（後述）。完全に新規の技術概念として受け取らない。
 
 ## ハーネスの構成要素
@@ -137,4 +137,5 @@ Claude（claude.ai / Claude Code）、GPT（ChatGPT / Codex）、Microsoft 365 C
 - [[ai-handson-framework]]
 - [[ai-business-adoption]]
 - [[ai-development-workflow]]
+- [[claude-code-permissions]]
 - [[claude-code-vs-cowork]]

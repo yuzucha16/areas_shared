@@ -37,6 +37,7 @@ updated: 2026-10-02
   - WSLには `fd` / `eza` / `broot` / `ghq` / `nvim` が入っていない（[[modern-cli-tools]]）。
 - 新しい知識ファイルは、AIの設計（[[ai-harness-concepts]]、[[ai-handson-framework]]、[[ai-business-adoption]]、[[human-ai-decision-loop]]）、Office / 自動化（[[office-ai-workspace]]、[[claude-code-vs-cowork]]、[[power-automate-office-automation]]）、環境（[[wsl-file-placement]]、[[vscode-workspace]]、[[modern-cli-tools]]）、Linux（[[linux-distro-selection]]、[[linux-multiboot-setup]]）、その他（[[keyboard-switches]]）。業務適用とLinux移行は別のプロジェクトにした（[[ai-business-adoption/context]]、[[linux-home-pc/context]]）。
 - 個人的な内容の3件（転職・EQ・入社計画）は、ユーザーがexmem外のローカルへ移した。inbox は空。
+- 2026-10-02 に、Claudeの自走期間を伸ばす権限制御のメモを統合した（5回目）。共通の許可ルールをdotfilesの `claude/user/settings.json` に置き、WSLにはリンク済み。Windowsは同じ内容の実ファイルがあるだけで、リンクは未適用（[[claude-code-permissions]]）。サンドボックス運用と `deny` は未決。
 - プロジェクトの `.claude/` は、`settings.local.json` だけをignoreし、`settings.json` / `skills/` は育ったら管理下に置く方針にした（[[claude-code-project-settings]]）。リポジトリのルートに `.gitignore` を追加した。
 
 ## Next Actions
@@ -50,6 +51,7 @@ updated: 2026-10-02
 - ZedのWSL連携方式と、開発リポジトリをWindows側（`C:\vault\repos`）に置くかWSL側に置くかを決める（[[wsl-file-placement]]）。
 - vaultのバックアップ（robocopy + タスクスケジューラ）を設定する（[[obsidian-vault]]）。
 - Zedで `claude-acp` が起動しない問題が再発したら、まずシェルのプロファイル出力を疑う（[[zed-acp]]）。
+- Windowsで `_scripts\w2a_copy_dotfiles.bat` を実行し、`~\.claude\settings.json` をリンクにする。サンドボックス運用、`deny`、`acceptEdits` を決める。数日使って `/fewer-permission-prompts` を再実行する（[[claude-code-permissions]]）。
 - AI活用の業務適用の次の作業は [[ai-business-adoption/context]] を見る。
 
 ## Goal

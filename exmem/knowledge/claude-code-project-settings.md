@@ -56,6 +56,10 @@ sources:
 - 例: 「inbox整理」の手順。
 - まず `AGENTS.md` に書く（他のエージェントも読める）。スキルにするのは、Claude固有で手順が長いときだけ。
 
+## 権限の土台との関係
+
+権限の共通ルールは、プロジェクトの `.claude/` ではなく**ユーザー階層**（`~/.claude/settings.json`、実体はdotfilesの `claude/user/settings.json`）に置いている（[[claude-code-permissions]]）。プロジェクト側の `settings.json` を使うのは、壊してよい「サンドボックス」リポジトリで権限を緩めるときが最初の想定。したがって、exmemの `.claude/settings.json` を管理下に置くのは、読み取り専用の許可が土台に入ってもなお足りない場合に限る。
+
 ## Facts
 
 - 2026-10-02 時点の exmem の `.claude/` は `settings.local.json` のみ（848バイト）。`allow` に PowerShell のコマンド2件が入っている。
@@ -73,6 +77,7 @@ sources:
 
 ## Related
 
+- [[claude-code-permissions]]
 - [[claude-code-storage]]
 - [[ai-development-workflow]]
 - [[zed-acp]]

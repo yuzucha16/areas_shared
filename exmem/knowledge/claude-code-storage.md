@@ -88,7 +88,7 @@ Claude Codeを起動して `projects\` に別の名前のフォルダができ�
 
 ## Open Questions
 
-- `~/.claude` の手書き設定（`CLAUDE.md`、`settings.json`、`projects\<プロジェクト名>\memory\`）をdotfilesで管理するか。
+- `~/.claude` の手書き設定のうち、`settings.json` は管理済み（dotfilesの `claude/user/settings.json` へリンク。WSLは適用済み、Windowsは未適用。[[claude-code-permissions]]）。`CLAUDE.md` と `projects\<プロジェクト名>\memory\` をdotfilesで管理するかは未決。
 - Claude Desktop の Code 機能から、ローカルの履歴が見えるか。
 
 ## Next Actions
