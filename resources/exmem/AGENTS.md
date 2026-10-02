@@ -4,13 +4,20 @@
 Claude / Codex / Copilot など、どのエージェントも同じルールで読み書きする。
 人間はObsidianで閲覧・編集する。
 
-- 場所: `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）
-- `areas_shared` は Gitリポジトリ `C:\vault\repos\github.com\yuzucha16\areas_shared` へのジャンクション。変更は `git diff` で確認できる。
-- エージェントはこのディレクトリを作業ディレクトリとして起動する。2026-10-01 まで使っていた `C:\Users\ck\vault\notes` は削除済み。
+- 場所: `C:\vault\notes\resources\exmem`（Obsidian Vault `C:\vault\notes` の中）
+- `C:\vault\notes` 自体が Gitリポジトリ（GitHub: `yuzucha16/notes`）のルート。変更は `git diff` で確認できる。共有するのは `resources/` と `.obsidian/` だけで、それ以外（`projects/` `areas/` `archives/`）は `.gitignore` によりローカル専用。
+- エージェントはこのディレクトリを作業ディレクトリとして起動する。
+- 2026-10-02 に `areas_shared` リポジトリ（ジャンクション経由）から `notes` リポジトリ直下へ移した。旧 `exmem/projects/` は、Vault の PARA の `projects/` と区別するため `contexts/` に改名した。
+
+## Vault での位置づけ
+
+- `resources/` は「共有（Git管理）」、それ以外の PARA 区分はローカル専用。共有するかどうかは名前ではなく `.gitignore` で決まる。
+- 共有側（`resources/`）のノートから、ローカル側（`areas/` など）へ `[[リンク]]` を張らない。他のPCでリンク切れになる。
+- `contexts/` は exmem のプロジェクト状態の置き場で、Vault 直下の `projects/` とは別物。
 
 ## 読む順番
 
-1. `projects/<project>/context.md` の `Current State` と `Next Actions`
+1. `contexts/<project>/context.md` の `Current State` と `Next Actions`
 2. そこからリンクされている `knowledge/*.md`
 3. 全体像が必要なら `README.md`、タグの一覧は `tags.md`
 
@@ -18,7 +25,7 @@ Claude / Codex / Copilot など、どのエージェントも同じルールで�
 
 - `inbox/`: 未整理の会話メモの一時置き場。知識へ統合したら削除する（`inbox/README.md` は除く）。
 - `knowledge/`: AIをまたいで再利用する知識。1ファイル1トピック。
-- `projects/<project>/context.md`: プロジェクトの現在状態と次にやること。
+- `contexts/<project>/context.md`: プロジェクトの現在状態と次にやること（旧 `projects/`）。
 
 ## Frontmatter
 
@@ -87,5 +94,5 @@ sources:
 
 ## 作業を終えるとき
 
-`projects/<project>/context.md` の `Current State` と `Next Actions` を更新する。
+`contexts/<project>/context.md` の `Current State` と `Next Actions` を更新する。
 次に作業するAI・端末は、ここから再開する。

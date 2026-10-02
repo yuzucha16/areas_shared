@@ -16,7 +16,7 @@ updated: 2026-10-02
 ## Current State
 
 - ZedにCodexとClaude AgentをACPで接続済み（[[zed-acp]]）。
-- ナレッジ構成を `inbox/` → `knowledge/` → `projects/` の形に整理した。会話ログは常設しない（[[ai-development-workflow]] D2）。
+- ナレッジ構成を `inbox/` → `knowledge/` → `contexts/`（旧 `projects/`）の形に整理した。会話ログは常設しない（[[ai-development-workflow]] D2）。
 - 各エージェントの入口として `AGENTS.md` を置いた（D6）。
 - Obsidian向けの作法を追加した。タグは `tags.md` の統制語彙による階層タグ、`aliases` で日本語名を付ける、知識一覧は `knowledge.base` で見る（D5、D9）。
 - inbox → knowledge の流れを3回通した。毎回、実物との照合でメモとの食い違いが見つかった。
@@ -39,9 +39,18 @@ updated: 2026-10-02
 - 個人的な内容の3件（転職・EQ・入社計画）は、ユーザーがexmem外のローカルへ移した。inbox は空。
 - 2026-10-02 に、Claudeの自走期間を伸ばす権限制御のメモを統合した（5回目）。共通の許可ルールをdotfilesの `claude/user/settings.json` に置き、WSLにはリンク済み。Windowsは同じ内容の実ファイルがあるだけで、リンクは未適用（[[claude-code-permissions]]）。サンドボックス運用と `deny` は未決。
 - プロジェクトの `.claude/` は、`settings.local.json` だけをignoreし、`settings.json` / `skills/` は育ったら管理下に置く方針にした（[[claude-code-project-settings]]）。リポジトリのルートに `.gitignore` を追加した。
+- 2026-10-02 に、Vaultの構造を見直した（[[obsidian-vault]] Decisions）。`notes` 自体を1つのGitリポジトリにし、共有は `resources/` だけ（`.gitignore` のホワイトリスト）にする。`areas_shared` の中身は `resources/` 配下へ移した（`exmem` `cheatsheets` `handson` `office` と、`obsolete` → `_archive/obsolete`）。`exmem/projects/` は Vaultの `projects/` と衝突するため `contexts/` に改名した。リポジトリ内の配置換えとドキュメント更新までは済み、実機の配置換えは未実施。
 
 ## Next Actions
 
+- **Vault構造の移行を完了する**（[[obsidian-vault]] 移行の状況）。順序の制約: GitHub rename → 配置換え。
+  1. GitHub で `areas_shared` を `notes` に rename し、このリポジトリをコミット・push する。
+  2. Claude Code / Zed / Obsidian を閉じ、`C:\vault\notes` を退避する。`C:\vault\repos\github.com\yuzucha16\areas_shared` を `notes` に改名し、`C:\vault\notes` として配置する（`areas` など空の PARA ディレクトリを作り直す）。`git remote set-url` で新URLにする。
+  3. `.obsidian` を dotfiles から `notes` 直下へ取り込む（履歴なし）。`workspace*.json` は `.gitignore` 済み。
+  4. dotfiles 側: `windows/office` を削除し、`manifests/links.map` のリンク元を `notes\resources\office\...` に書き換えてリンクを張り直す。`windows/obsidian` も削除する。README の記述（移管予定）を更新する。dotfiles のセットアップ順序は「`notes` を先にclone」になる。
+  5. 空になった旧 `exmem/`（`.claude/settings.local.json` だけが残っている）を、新しい `resources/exmem/.claude/` へ移して削除する。Claude Code の履歴とメモリを新パスのフォルダへコピーし直す（[[claude-code-storage]]）。Zed のプロジェクトも開き直す。
+  6. `resources/fonts/` に HackGen Console NF Regular とライセンス文書を置いてコミットする（Git LFS、`README.md` の「版」を記入）。
+  7. ローカル専用の置き場（`projects/` `areas/` `archives/`）の使い分けを決める。
 - Zedで exmem をプロジェクトとして開き、Claude Agentが exmem の `AGENTS.md` を読んでいるか確認する（「exmemって何？」と聞く）。
 - ターミナルで exmem に移動して `claude --resume` を実行し、コピーした履歴とメモリが引き継がれているか確認する（[[claude-code-storage]]）。
 - `knowledge.base` をObsidianで開き、一覧が表示されるか確認する。

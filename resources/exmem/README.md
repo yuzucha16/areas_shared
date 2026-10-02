@@ -27,15 +27,15 @@ AIサービスの会話履歴やメモリに知識を閉じ込めず、Markdown�
 
 - `inbox/`: 未整理の会話メモの一時置き場。知識へ統合したら削除する
 - `knowledge/`: AIをまたいで再利用する知識。1ファイル1トピック
-- `projects/`: 個別プロジェクトの現在状態と次にやること
+- `contexts/`: 個別プロジェクトの現在状態と次にやること（Vault の PARA の `projects/` とは別物）
 
 ## ディレクトリ構造
 
-場所は `C:\vault\notes\areas_shared\exmem`（Obsidian Vault `C:\vault\notes` の中）。`areas_shared` リポジトリでGit管理している。
+場所は `C:\vault\notes\resources\exmem`（Obsidian Vault `C:\vault\notes` の中）。`C:\vault\notes` 全体が `notes` リポジトリで、共有対象は `resources/` だけ（[[obsidian-vault]]）。
 AIエージェントはこのディレクトリを作業ディレクトリとして起動する。
 
 ```text
-exmem/
+exmem/                 # resources/exmem/
 ├── README.md
 ├── AGENTS.md          # 全エージェント共通の入口・書き方ルール
 ├── CLAUDE.md          # @AGENTS.md を読み込むだけ
@@ -65,7 +65,7 @@ exmem/
 │   ├── zed-acp.md
 │   ├── zed-dotfiles.md
 │   └── zed-vim.md
-└── projects/
+└── contexts/
     ├── ai-business-adoption/
     │   └── context.md
     ├── ai-development-workflow/
@@ -96,7 +96,7 @@ Zed ACPは独立したプロジェクトではなく、AI開発ワークフロ�
 
 1. 壁打ちの最後に `inbox/README.md` のプロンプトで要点をまとめさせ、Obsidianモバイルアプリで `inbox/` に保存する。
 2. inbox のメモから決定・根拠・ハマりどころ・未決事項を `knowledge/` に統合し、メモは削除する。
-3. プロジェクト固有の現在状態は `projects/<project>/context.md` に集約する。
+3. プロジェクト固有の現在状態は `contexts/<project>/context.md` に集約する。
 4. 作業の終わりに `context.md` の `Current State` と `Next Actions` を更新する。
 5. AIを変更しても読めるよう、Markdown + YAML frontmatter + 通常の見出しを基本とする。
 

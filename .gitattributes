@@ -1,0 +1,9 @@
+# バイナリ置き場（Git LFS）。office/ のテンプレは対象外（小さいため通常のGit管理）。
+resources/fonts/** filter=lfs diff=lfs merge=lfs -text
+resources/wallpapers/** filter=lfs diff=lfs merge=lfs -text
+
+# 上記ディレクトリ内でも、説明文書とプレースホルダはLFSに入れない（後の行が優先される）
+resources/fonts/**/*.md -filter -diff -merge text
+resources/fonts/**/*.txt -filter -diff -merge text
+resources/wallpapers/**/*.md -filter -diff -merge text
+resources/**/.gitkeep -filter -diff -merge text
