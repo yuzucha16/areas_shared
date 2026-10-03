@@ -2,8 +2,9 @@
   "theme": "obsidian",
   "accentColor": "",
   "cssTheme": "Obsidian gruvbox",
-  "interfaceFontFamily": "Noto Sans JP,BIZ UDPゴシック,Meiryo UI,HackGen Console NF",
-  "textFontFamily": "Noto Sans JP,BIZ UDPゴシック,Meiryo UI,HackGen Console NF",
-  "monospaceFontFamily": "HackGen Console NF,MyricaM Nerd Font,Meiryo UI",
-  "enabledCssSnippets": []
+  "interfaceFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
+  "textFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
+  "monospaceFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
+  "enabledCssSnippets": [],
+  "baseFontSize": 14
 }
