@@ -2,7 +2,7 @@
 .theme-dark .markdown-rendered strong,
 .theme-dark .markdown-rendered b,
 .theme-dark .markdown-source-view.mod-cm6 .cm-strong {
-  color: #C6A879 !important;
+  /*color: #C6A879 !important;*/
   font-weight: 500;
 }
 

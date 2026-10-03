@@ -1,0 +1,10 @@
+/* File explorer: tighter vertical spacing (default padding is 4px top/bottom) */
+body {
+  --nav-item-padding: 2px var(--size-4-2) 2px var(--size-4-6);
+  --nav-item-parent-padding: 2px var(--size-4-2) 2px var(--size-4-2);
+}
+
+.nav-file-title,
+.nav-folder-title {
+  line-height: var(--line-height-tight);
+}

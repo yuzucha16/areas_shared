@@ -14,9 +14,6 @@
 /.obsidian/workspace.json
 /.obsidian/workspace-mobile.json
 
-# colored-tags のタグ色キャッシュ（タグを見つけた順に連番を振るため端末ごとに変わる）
-/.obsidian/plugins/colored-tags/data.json
-
 # Claude Code のローカル専用の許可設定（端末ごと・個人用）
 **/.claude/settings.local.json
 

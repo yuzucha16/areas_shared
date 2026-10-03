@@ -6,7 +6,8 @@
   "textFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
   "monospaceFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
   "enabledCssSnippets": [
-    "material-gruvbox-bold"
+    "material-gruvbox-bold",
+    "file-explorer-compact"
   ],
   "baseFontSize": 14,
   "baseFontSizeAction": true,
