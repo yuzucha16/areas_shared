@@ -11,5 +11,6 @@
     ".tmp.",
     "_archive/",
     ".claude/"
-  ]
+  ],
+  "readableLineLength": true
 }
