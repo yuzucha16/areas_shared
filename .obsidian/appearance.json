@@ -1,10 +1,15 @@
 {
   "theme": "obsidian",
-  "accentColor": "",
-  "cssTheme": "Obsidian gruvbox",
+  "accentColor": "#5f5cf5",
+  "cssTheme": "Material Gruvbox",
   "interfaceFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
   "textFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
   "monospaceFontFamily": "PlemolJP Console NF,Moralerspace Neon HW,Meiryo UI",
-  "enabledCssSnippets": [],
-  "baseFontSize": 14
+  "enabledCssSnippets": [
+    "material-gruvbox-bold"
+  ],
+  "baseFontSize": 14,
+  "baseFontSizeAction": true,
+  "showViewHeader": true,
+  "showRibbon": true
 }

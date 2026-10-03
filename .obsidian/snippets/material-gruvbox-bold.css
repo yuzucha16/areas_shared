@@ -1,0 +1,40 @@
+/* Material Gruvbox: Bold color */
+/"
+/* Reading View */
+.theme-dark .markdown-rendered strong,
+.theme-dark .markdown-rendered b {
+  color: #C6A879 !important;
+}
+
+/* Live Preview */
+.theme-dark .markdown-source-view.mod-cm6 .cm-strong {
+  color: #C6A879 !important;
+}
+"/
+/* Bold weight */
+.theme-dark .markdown-rendered strong,
+.theme-dark .markdown-source-view.mod-cm6 .cm-strong {
+  font-weight: 500;
+}
+
+/* Heading color: Olive Green */
+
+/* Reading View */
+.theme-dark .markdown-rendered h1,
+.theme-dark .markdown-rendered h2,
+.theme-dark .markdown-rendered h3,
+.theme-dark .markdown-rendered h4,
+.theme-dark .markdown-rendered h5,
+.theme-dark .markdown-rendered h6 {
+  color: #A7B85A !important;
+}
+
+/* Live Preview */
+.theme-dark .markdown-source-view.mod-cm6 .HyperMD-header {
+  color: #A7B85A !important;
+}
+
+/* Inline title: Olive Green */
+.theme-dark .inline-title {
+  color: #A7B85A !important;
+}

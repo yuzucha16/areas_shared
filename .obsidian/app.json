@@ -1,10 +1,11 @@
 {
-  "showLineNumber": false,
+  "showLineNumber": true,
   "autoPairMarkdown": false,
   "tabSize": 2,
-  "newFileLocation": "folder",
+  "newFileLocation": "current",
   "newFileFolderPath": "0_inbox",
-  "attachmentFolderPath": "0_inbox",
+  "attachmentFolderPath": "./",
   "showIndentGuide": false,
-  "promptDelete": false
+  "promptDelete": true,
+  "rightToLeft": false
 }
