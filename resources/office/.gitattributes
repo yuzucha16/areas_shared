@@ -5,3 +5,4 @@
 *.xltx binary
 *.dotm binary
 *.thmx binary
+*.exportedUI binary

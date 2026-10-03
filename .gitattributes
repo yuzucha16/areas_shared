@@ -1,3 +1,6 @@
+# 改行コードはLFに統一（Obsidian・AI・WSL/Linuxの出力がLFのため）。バイナリはgitが自動判定。
+* text=auto eol=lf
+
 # バイナリ置き場（Git LFS）。office/ のテンプレは対象外（小さいため通常のGit管理）。
 resources/fonts/** filter=lfs diff=lfs merge=lfs -text
 resources/wallpapers/** filter=lfs diff=lfs merge=lfs -text
