@@ -3,9 +3,13 @@
   "autoPairMarkdown": false,
   "tabSize": 2,
   "newFileLocation": "current",
-  "newFileFolderPath": "0_inbox",
   "attachmentFolderPath": "./",
   "showIndentGuide": false,
   "promptDelete": true,
-  "rightToLeft": false
+  "rightToLeft": false,
+  "userIgnoreFilters": [
+    ".tmp.",
+    "_archive/",
+    ".claude/"
+  ]
 }
